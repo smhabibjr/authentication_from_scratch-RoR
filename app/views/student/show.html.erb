@@ -1,0 +1,25 @@
+<div class="container">
+
+  <% if flash[:notice] %>
+    <div class="notice alert alert-success">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <table class="table">
+    <tr>
+      <th>Studnt Name </th>
+      <th>Studnt email</th>
+      <th>Studnt image</th>
+      <th>Edit action</th>
+      <th>Delete Action</th>
+    </tr>
+    <tr>
+      <td> <%= @single_student_show.name %> </td>
+      <td> <%= @single_student_show.email %> </td>
+      <td> <%= image_tag @single_student_show.student_avatar, :size => "50x50" %> </td>
+      <td><a class="btn btn-primary" href="/student/edit/<%= @single_student_show.id %> ">Edit</a> </td>
+      <td><a class="btn btn-danger" href=" /student/destroy/ <%= @single_student_show.id %> " data-method="DELETE" data-confirm="Are you sure?" >Delete</a> </td>
+    </tr>
+  </table>
+</div>

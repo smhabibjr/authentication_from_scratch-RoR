@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>All Articles </h1>
+
+
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><a href="/articles/<%= article.id %>"><%= article.title %> </a> </td>
+        <td><a class="btn btn-primary" href=" /articles/<%= article.id %>/edit">Edit</a> </td>
+        <td><a class="btn btn-danger" href="/articles/<%= article.id %>" data-method="delete" data-confirm="Are you sure?" >Delete</a> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
