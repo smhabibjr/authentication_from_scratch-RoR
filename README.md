@@ -1,5 +1,9 @@
 # README
 
+
+Tutorial link: https://www.section.io/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
