@@ -1,0 +1,27 @@
+<div class="container">
+
+  <% if @user_login_or_not  %>
+  <div class="container d-flex justify-content-center">
+    <p>You alreaday loged in</p>
+    Logged in as <%= current_user.email %>
+    <br>
+    <%= link_to "Log Out", logout_path %>
+  </div>
+  <% else  %>
+      <h1>Log in</h1>
+        <%= form_with url: log_in_path do |f| %>
+          <p>
+            <%= f.label 'Email' %> <br>
+            <%= f.text_field :email %> <br>
+          </p>
+          <p>
+            <%= f.label 'Password' %> <br>
+            <%= f.password_field :password %> <br>
+          </p>
+          <p>
+            <%= f.submit 'Log in' %> <br>
+          </p>
+        <% end  %>
+    <% end %>
+
+</div>
