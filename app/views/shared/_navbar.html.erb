@@ -28,9 +28,15 @@
 
         </ul>
         <form class="">
-          <a class="btn btn-outline-primary mr-2"href="#">Login</a>
-          <a class="btn btn-outline-success"href="#">Create An Account</a>
+          <% if current_user %>
+            <a class="btn btn-outline-primary mr-2" href="/logout">Logout</a>
+          <% else %>
+
+            <a class="btn btn-outline-primary mr-2" href="/login">Login</a>
+            <a class="btn btn-outline-success" href="/signup">Create An Account</a>
+          <% end %>
         </form>
+
       </div>
     </div>
   </nav>

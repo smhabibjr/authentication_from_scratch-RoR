@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag params[:controller] %>
-  </head>
+<head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag params[:controller] %>
+</head>
 
-  <body>
-    <%= render 'shared/navbar' %>
+<body>
+<%= render 'shared/navbar' %>
+<% if notice %>
+  <div class="alert alert-success" role="alert">
     <%= notice %>
-    <%= alert %>
-    <%= yield %>
+  </div>
+<% end %>
 
-    
-  </body>
+<% if alert %>
+  <div class="alert alert-danger" role="alert">
+    <%= alert %>
+  </div>
+<% end %>
+
+<div class="container">
+
+</div>
+
+
+
+<%= yield %>
+
+
+</body>
 </html>

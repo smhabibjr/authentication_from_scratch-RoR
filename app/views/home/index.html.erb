@@ -1,29 +1,29 @@
-<div class="container pt-5 d-flex justify-content-center">
-  <div class="card shadow-lg rounded" style="width: 25rem;">
-    <%= image_tag "1-wtp-logo.jpg", height: 300 %>
-    <div class="card-body container-fluid">
-      <div class="container d-flex justify-content-center">
-        <h3 class="card-title">Log in</h3>
-      </div>
+<% if current_user %>
 
-      <div class="input-group p-2 flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-      </div>
+  <div class="container d-flex justify-content-center pt-5">
+    <div class="card" style="width: 30rem;">
+      <div class="card-body">
+        <h5 class="card-title">Welcome to Dashboard</h5>
 
-      <div class="input-group p-2 flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">#</span>
-        <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+        <h6 class="card-subtitle mb-2 text-muted">User information</h6>
+        <p class="card-text">User name : <%= current_user.username %></p>
+        <p class="card-text">User Email : <%= current_user.email %></p>
+        <%= link_to 'Log out', logout_path %>
       </div>
+    </div>
+  </div>
 
-      <button type="button" class="btn btn-primary w-100">Login</button>
+
+<% else %>
+
+<div class="container d-flex justify-content-center pt-5">
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <h5 class="card-title">User information not abailable</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Registration or Log in first please.</h6>
+      <%= link_to 'Sign up', signup_path %> Or <%= link_to 'Log in ', login_path %>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
+<% end %>
