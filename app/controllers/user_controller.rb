@@ -5,12 +5,12 @@ class UserController < ApplicationController
 
   def create
 
-    create_new_user = User.new(new_user_params)
-    if create_new_user.save
-      session[:user_id] = create_new_user.id
+    @new_user = User.new(new_user_params)
+    if @new_user.save
+      session[:user_id] = @new_user.id
       redirect_to root_path, notice: 'Account successfully created'
     else
-        redirect_to signup_path, notice: 'invalid username and password'
+      render :index
     end
   end
 

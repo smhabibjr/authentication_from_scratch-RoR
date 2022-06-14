@@ -1,0 +1,2 @@
+module ChangePassHelper
+end
