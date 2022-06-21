@@ -1,0 +1,27 @@
+<div class="container pt-5 d-flex justify-content-center">
+  <div class="card shadow-lg rounded w-50 h-75">
+    <div class="row d-flex justify-content-center">
+      <%= image_tag "1-wtp-logo.jpg",class: "w-75 h-100" %>
+    </div>
+
+    <div class="card-body container-fluid">
+
+      <div class="container d-flex justify-content-center">
+        <h3 class="card-title">Reset your Password</h3>
+      </div>
+
+
+      <%= form_with url: password_reset_path do |f| %>
+        <div class="input-group p-2 flex-nowrap">
+          <%= f.label 'Email', class:"input-group-text" %> <br>
+          <%= f.text_field :email, class:"form-control", placeholder:"info@example.com"  %>
+        </div>
+
+
+        <%= f.submit 'Reset Password', class: "btn btn-primary w-100" %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

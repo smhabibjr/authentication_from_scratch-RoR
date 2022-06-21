@@ -8,7 +8,7 @@ class LoginController < ApplicationController
       session[:user_id] = find_user.id
       redirect_to root_path, notice: 'User loged in'
     else
-      redirect_to login_path, notice: 'User name or password invalid'
+      redirect_to login_path, alert: 'User name or password invalid'
     end
   end
 
