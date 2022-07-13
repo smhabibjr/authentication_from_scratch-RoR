@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   get 'passwor/reset', to: "password_reset#index", as: "password_reset_form"
   post 'password/reset' => "password_reset#create", as: "password_reset"
+  get 'password/reset/edit' => "password_reset#edit", as: "password_reset_edit"
+  patch 'password/reset/edit' => "password_reset#update"
+
+
+  get 'password/reset/edit' => "password_reset#edit"
+  post 'password/reset/edit' => "password_reset#update"
   # Reset password
 
   # change passwor
